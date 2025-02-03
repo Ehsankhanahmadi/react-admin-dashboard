@@ -1,6 +1,9 @@
+import { Sidebar } from "./components"
+
 function App() {
   return (
     <>
+    <Sidebar/>
     </>
   )
 }
