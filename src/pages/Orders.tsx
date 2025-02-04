@@ -2,7 +2,11 @@ import React from 'react'
 
 const Orders = () => {
   return (
-    <div>Orders</div>
+    <>
+    <div>
+      <div className="lg:ml-[23%]">Orders</div>
+    </div>
+    </>
   )
 }
 

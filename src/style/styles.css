@@ -39,3 +39,9 @@ body {
   transition-duration: 2000ms;
   transform: translateX(-500px);
 }
+
+.open {
+  transition: all;
+  transition-duration: 500ms;
+  transform: translateX(0px);
+}

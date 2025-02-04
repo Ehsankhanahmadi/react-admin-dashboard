@@ -2,7 +2,11 @@ import React from 'react'
 
 const Calendar = () => {
   return (
-    <div>Calendar</div>
+    <>
+    <div>
+      <div className="lg:ml-[23%]">Calendar</div>
+    </div>
+    </>
   )
 }
 

@@ -1,11 +1,21 @@
 import { Routes,Route } from "react-router-dom";
 import { Area, Bar, Calendar, ColorPicker, Customers, Ecommerce, Editor, Employees, Kanban, Line, Orders, Pie } from "./pages";
-import { Sidebar } from "./components"
+import { Navbar, Sidebar } from "./components"
+import { Openclose } from "./contexts/contextprovider";
+import { useState } from "react";
 
 function App() {
+
+  const [OC, setOC] = useState<any>(false)
+  
   return (
     <>
-    <Sidebar/>
+    <Openclose.Provider value={{OC,setOC}}>
+      <div className="lg:flex">
+        <div className="lg:w-22/100"><Sidebar/></div>
+        <div className="lg:w-78/100"><Navbar/></div>
+      </div>
+    </Openclose.Provider>
       <Routes>
         <Route index element={<Ecommerce/>}/>
         <Route path="/Ecommerce" element={<Ecommerce/>}/>

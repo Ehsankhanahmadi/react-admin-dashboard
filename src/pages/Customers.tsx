@@ -1,8 +1,10 @@
-import React from 'react'
-
 const Customers = () => {
   return (
-    <div>Customers</div>
+    <>
+    <div>
+      <div className="lg:ml-[23%]">Customers</div>
+    </div>
+    </>
   )
 }
 

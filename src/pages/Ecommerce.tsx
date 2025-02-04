@@ -1,8 +1,10 @@
-import React from 'react'
-
 const Ecommerce = () => {
   return (
-    <div>Ecommerce</div>
+    <>
+    <div>
+      <div className="lg:ml-[23%]">Ecommerce</div>
+    </div>
+    </>
   )
 }
 

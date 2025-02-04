@@ -2,7 +2,11 @@ import React from 'react'
 
 const Line = () => {
   return (
-    <div>Line</div>
+    <>
+    <div>
+      <div className="lg:ml-[23%]">Line</div>
+    </div>
+    </>
   )
 }
 

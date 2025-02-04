@@ -2,7 +2,11 @@ import React from 'react'
 
 const ColorPicker = () => {
   return (
-    <div>ColorPicker</div>
+    <>
+    <div>
+      <div className="lg:ml-[23%]">ColoePocker</div>
+    </div>
+    </>
   )
 }
 

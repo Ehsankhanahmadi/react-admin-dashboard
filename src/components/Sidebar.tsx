@@ -1,23 +1,31 @@
+import { Openclose } from '../contexts/contextprovider'
+import { useContext, useEffect } from 'react'
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
+
   const [icond, seticond] = useState(true);
   const [iconp, seticonp] = useState(true);
   const [icona, seticona] = useState(true);
   const [iconc, seticonc] = useState(true);
-  const [sidx, setsidx] = useState(true);
+  const { OC , setOC } = useContext(Openclose)
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 1024) {
-      setsidx(true);
+  useEffect(() => {
+    if(window.innerWidth >= 1024){
+      setOC(true)
     }
-  });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1024) {
+        setOC(true)
+      }
+    });
+  }, [])
 
   return (
     <>
       {/* context sidbar */}
-      <div className={`${sidx ? "block" : "close"} bg-main-dark-bg fixed z-50 h-screen w-[62%] overflow-y-scroll pb-2.5 shadow-[0px_0px_13px_0px] sm:w-[35%] md:w-[35%] lg:w-[22%]`}>
+      <div className={`${OC ? "open" : "close"} bg-main-dark-bg fixed z-50 h-screen w-[62%] overflow-y-scroll pb-2.5 shadow-[0px_0px_13px_0px] sm:w-[35%] md:w-[35%] lg:w-[22%]`}>
         {/* header sidbar */}
         <div className="flex items-center justify-between px-4 py-5">
           <div className="flex items-center">
@@ -26,7 +34,7 @@ const Sidebar = () => {
             </svg>
             <div className="pl-2 font-bold text-white">shoppy</div>
           </div>
-          <div onClick={() => {setsidx(false);}}className="lg:hidden">
+          <div onClick={() => setOC(false)}className="lg:hidden">
             <svg fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="white" className="size-5 hover:cursor-pointer">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12"/>
             </svg>

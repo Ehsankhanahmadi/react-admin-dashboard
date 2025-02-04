@@ -2,7 +2,11 @@ import React from 'react'
 
 const Pie = () => {
   return (
-    <div>Pie</div>
+    <>
+    <div>
+      <div className="lg:ml-[23%]">Pie</div>
+    </div>
+    </>
   )
 }
 

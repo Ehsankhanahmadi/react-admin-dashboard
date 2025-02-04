@@ -2,7 +2,11 @@ import React from 'react'
 
 const Bar = () => {
   return (
-    <div>Bar</div>
+    <>
+    <div>
+      <div className="lg:ml-[23%]">Bar</div>
+    </div>
+    </>
   )
 }
 
