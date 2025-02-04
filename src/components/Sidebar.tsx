@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Link, Routes,Route, BrowserRouter as Router } from "react-router-dom";
-import { Area, Bar, Calendar, ColorPicker, Customers, Ecommerce, Editor, Employees, Kanban, Line, Orders, Pie } from "../pages";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [icond, seticond] = useState(true);
@@ -17,7 +16,6 @@ const Sidebar = () => {
 
   return (
     <>
-    <Router >
       {/* context sidbar */}
       <div className={`${sidx ? "block" : "close"} bg-main-dark-bg fixed z-50 h-screen w-[62%] overflow-y-scroll pb-2.5 shadow-[0px_0px_13px_0px] sm:w-[35%] md:w-[35%] lg:w-[22%]`}>
         {/* header sidbar */}
@@ -218,22 +216,6 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      <Routes>  
-        <Route index element={<Ecommerce/>}/>
-        <Route path="/Ecommerce" element={<Ecommerce/>}/>
-        <Route path="/Orders" element={<Orders/>}/>
-        <Route path="/Employees" element={<Employees/>}/>
-        <Route path="/Customers" element={<Customers/>}/>
-        <Route path="/Calendar" element={<Calendar/>}/>
-        <Route path="/Kanban" element={<Kanban/>}/>
-        <Route path="/Editor" element={<Editor/>}/>
-        <Route path="/ColorPicker" element={<ColorPicker/>}/>
-        <Route path="/Line" element={<Line/>}/>
-        <Route path="/Area" element={<Area/>}/>
-        <Route path="/Bar" element={<Bar/>}/>
-        <Route path="/Pie" element={<Pie/>}/>
-      </Routes>
-    </Router>
     </>
   );
 };
