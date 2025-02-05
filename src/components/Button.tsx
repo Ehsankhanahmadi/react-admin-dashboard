@@ -1,8 +1,8 @@
-import React from 'react'
-
-const Button = () => {
+const Button = ({text}:any) => {
   return (
-    <div>Button</div>
+    <>
+    <div className="bg-secondary-dark-bg w-fit hover:cursor-pointer p-2 rounded-xl m-2">{text}</div>
+    </>
   )
 }
 

@@ -9,10 +9,10 @@ const Navbar = () => {
   return (
     <>
       <div className="p-2 w-full">
-        <div className="p-2 flex items-center justify-between">
+        <div className="p-2 m-2 rounded-xl flex items-center justify-between">
           <div className='flex items-center gap-4'>
             <div onClick={() => setOC(true)} className='lg:hidden'><i className={`fa-solid fa-bars text-[18px] text-main-light-gray hover:cursor-pointer`}></i></div>
-            <div><i className="fa-solid fa-magnifying-glass text-[18px] text-main-light-gray hover:cursor-pointer"></i></div>
+            <div><i className="fa-solid fa-magnifying-glass text-[18px] text-main-light-gray hover:cursor-pointer lg:pl-2"></i></div>
           </div>
           <div className='flex items-center gap-4'>
             <div><i className="fa-solid fa-basket-shopping text-[18px] text-main-light-gray hover:cursor-pointer"></i></div>
