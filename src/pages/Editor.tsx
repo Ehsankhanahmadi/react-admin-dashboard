@@ -1,10 +1,12 @@
-import React from 'react'
-
 const Editor = () => {
   return (
     <>
     <div>
-      <div className="lg:ml-[23%]">Editor</div>
+      <div className="lg:ml-[23%]">
+          <div className='m-2 p-2 bg-blue-500'>
+            Editor
+          </div>
+        </div>
     </div>
     </>
   )
