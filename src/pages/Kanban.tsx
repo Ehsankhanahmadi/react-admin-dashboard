@@ -5,6 +5,7 @@ const Kanban = () => {
   // zadan project 3D website
   // baresi disgne pattern dar js
   // shoroieh mavared backend doreh asli
+  // project ha va mevared marboot beh backend 
   return (
 <>
     <div>
