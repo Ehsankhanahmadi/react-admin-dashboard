@@ -3,6 +3,8 @@ const Kanban = () => {
   // bad az in mavared baiad ecommerce ra bazanim
   // didan video haieh R3F
   // zadan project 3D website
+  // baresi disgne pattern dar js
+  
   return (
 <>
     <div>
