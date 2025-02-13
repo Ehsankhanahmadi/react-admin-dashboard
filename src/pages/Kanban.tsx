@@ -8,6 +8,7 @@ const Kanban = () => {
   // project ha va mevared marboot beh backend
   // ta paian term 2 baiad keh fullstack ra tamam konim va ro biavarim beh linkdin
   // zadan site haieh nahaii
+  
   return (
 <>
     <div>
