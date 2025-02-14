@@ -1,6 +1,4 @@
 const Editor = () => {
-
-  // in mored baiad kamel shavad
   return (
     <>
     <div>
