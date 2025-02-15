@@ -10,15 +10,8 @@ const Kanban = () => {
     useEffect(() => {
     if (containerRef.current) {
       swapyRef.current = createSwapy(containerRef.current, {})
-
-      // swapyRef.current.enable(false)
-      // swapyRef.current.destroy()
-      // console.log(swapyRef.current.slotItemMap())
-
       swapyRef.current.onBeforeSwap((event) => {
         console.log('beforeSwap', event)
-        // This is for dynamically enabling and disabling swapping.
-        // Return true to allow swapping, and return false to prevent swapping.
         return true
       })
 
