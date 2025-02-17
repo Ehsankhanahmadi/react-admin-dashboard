@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.3",
+    "@tiptap/pm": "^2.11.5",
+    "@tiptap/react": "^2.11.5",
+    "@tiptap/starter-kit": "^2.11.5",
     "apexcharts": "^4.4.0",
     "react": "^19.0.0",
     "react-apexcharts": "^1.7.0",

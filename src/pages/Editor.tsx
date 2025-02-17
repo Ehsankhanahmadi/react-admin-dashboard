@@ -1,5 +1,4 @@
 const Editor = () => {
-  
   return (
     <>
     <div>
