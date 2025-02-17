@@ -45,3 +45,11 @@ body {
   transition-duration: 500ms;
   transform: translateX(0px);
 }
+
+.editorbutten {
+  @apply bg-secondary-dark-bg p-1 rounded-xl hover:cursor-pointer
+}
+
+.editorbuttenon {
+  @apply bg-yellow-500 p-1 rounded-xl hover:cursor-pointer
+}
