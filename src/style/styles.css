@@ -53,3 +53,15 @@ body {
 .editorbuttenon {
   @apply bg-yellow-500 p-1 rounded-xl hover:cursor-pointer
 }
+
+ul{
+  @apply list-disc list-inside
+}
+
+li {
+  /* @apply inline */
+}
+
+p {
+  @apply block
+}

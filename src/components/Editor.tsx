@@ -4,17 +4,37 @@ import TextStyle from '@tiptap/extension-text-style'
 import { EditorProvider, useCurrentEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import CodeBlock from '@tiptap/extension-code-block'
+import Viewbox from './viewbox'
+import { useState } from 'react'
+import BulletList from '@tiptap/extension-bullet-list' // chone darim az tailwind estefadeh mikonim pish 
+// darze list ha khadab ast
+
 
 
 const Editorbox = () => {
+
+  const [text, settext] = useState<any>('')
+
   const { editor } = useCurrentEditor()
 
   if (!editor) {
     return null
   }
 
+  const handleSave = () => {
+    if (editor) {
+      const html = editor.getHTML()
+      // const json = editor.getJSON()
+      settext(html)
+      console.log(html) // data
+      // console.log(json) // data
+    }
+  }
+
+
   return (
-    <div className="p-2 pb-5 border-b-1 mb-5">
+    <>
+    <div className="p-2 pb-5">
       <div className="grid grid-cols-4 grid-rows-5 md:grid-cols-7 md:grid-rows-3 gap-2 justify-between items-center">
         <button
           onClick={() => editor.chain().focus().toggleBold().run()}
@@ -50,8 +70,8 @@ const Editorbox = () => {
               .focus()
               .toggleStrike()
               .run()
-          }
-          className={`${editor.isActive('strike') ? 'is-active editorbuttenon' : 'editorbutten'}`}
+            }
+            className={`${editor.isActive('strike') ? 'is-active editorbuttenon' : 'editorbutten'}`}
         >
           Strike
         </button>
@@ -59,10 +79,10 @@ const Editorbox = () => {
           onClick={() => editor.chain().focus().toggleCode().run()}
           disabled={
             !editor.can()
-              .chain()
-              .focus()
-              .toggleCode()
-              .run()
+            .chain()
+            .focus()
+            .toggleCode()
+            .run()
           }
           className={`${editor.isActive('code') ? 'is-active editorbuttenon' : 'editorbutten'}`}
         >
@@ -117,7 +137,7 @@ const Editorbox = () => {
           H6
         </button>
         <button
-          onClick={() => editor.chain().focus().toggleBulletList().run()}
+          onClick={() => editor.commands.toggleBulletList()}
           className={`${editor.isActive('bulletList') ? 'is-active editorbuttenon' : 'editorbutten'}`}
         >
           Bullet list
@@ -163,7 +183,7 @@ const Editorbox = () => {
           onClick={() => editor.chain().focus().redo().run()}
           disabled={
             !editor.can()
-              .chain()
+            .chain()
               .focus()
               .redo()
               .run()
@@ -180,10 +200,21 @@ const Editorbox = () => {
         </button>
       </div>
     </div>
+    <div onClick={handleSave} className='m-2 py-3 mb-5 rounded-xl text-center font-bold text-[24px] bg-secondary-dark-bg hover:cursor-pointer'>save</div>
+    <div className={`${text == '' ? "hidden" : "block"}`}>
+      <Viewbox data={text}/>
+    </div>
+    </>
   )
 }
 
 const extensions = [
+  BulletList.configure({
+    HTMLAttributes: {
+      class: 'my-custom-class',
+    },
+  })
+  ,  
   CodeBlock.configure({languageClassPrefix: 'language-',}),      
   Color.configure({ types: [TextStyle.name, ListItem.name,"textStyle"] }),
 //   TextStyle.configure({ types: [ListItem.name] }),
@@ -199,36 +230,8 @@ const extensions = [
   }),
 ]
 
-const content = `
-<h2>
-Hi there,
-</h2>
-<p>
-  this is a <em>basic</em> example of <strong>Tiptap</strong>. Sure, there are all kind of basic text styles you’d probably expect from a text editor. But wait until you see the lists:
-</p>
-<ul>
-  <li>
-    That’s a bullet list with one …
-  </li>
-  <li>
-    … or two list items.
-    </li>
-    </ul>
-<p>
-  Isn’t that great? And all of that is editable. But wait, there’s more. Let’s try a code block:
-  </p>
-  <pre><code class="language-css">body {
-    display: none;
-    }</code></pre>
-    <p>
-    I know, I know, this is impressive. It’s only the tip of the iceberg though. Give it a try and click a little bit around. Don’t forget to check the other examples too.
-    </p>
-    <blockquote>
-    Wow, that’s amazing. Good work, boy! 👏
-    <br />
-    — Mom
-    </blockquote>
-`
+const content = ``
+
 
 export default () => {
   return (
