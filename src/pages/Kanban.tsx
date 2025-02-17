@@ -36,7 +36,7 @@ return (
     <div>
       <div className="lg:ml-[23%]">
           <div className='p-2 m-2'>
-          <div className="container grid grid-rows-2 grid-cols-2 gap-2" ref={containerRef}>
+          <div className="container grid grid-rows-2 grid-cols-2 gap-2 text-white" ref={containerRef}>
              <div className="slot top col-span-2" data-swapy-slot="a">
                <div className="item item-a" data-swapy-item="a">
                  <div className='bg-main-dark-bg p-2 rounded-xl h-32 flex justify-center items-center hover:'>A</div>
