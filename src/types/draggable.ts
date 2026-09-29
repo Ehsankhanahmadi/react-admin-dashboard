@@ -61,7 +61,7 @@ export function makeDraggable(
   let relativeX = 0
   let relativeY = 0
   let draggingEl: HTMLElement | null = null
-  let timer: NodeJS.Timeout | null
+  let timer: ReturnType<typeof setTimeout> | null = null
 
   el.addEventListener('pointerdown', onPointerDown)
   document.body.addEventListener('pointerup', onPointerUp)

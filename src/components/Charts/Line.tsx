@@ -2,7 +2,7 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 
 const LineChart = () => {
-    const [state, setState] = React.useState<any>({
+    const [state] = React.useState<any>({
       
         series: [{
           name: 'XYZ MOTORS',

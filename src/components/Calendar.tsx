@@ -6,8 +6,8 @@ import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from './event-utils'
 
 export default function DemoApp() {
-  const [weekendsVisible, setWeekendsVisible] = useState(true)
-  const [currentEvents, setCurrentEvents] = useState([])
+  const [weekendsVisible] = useState(true)
+  // const [setCurrentEvents] = useState([])
 
   function handleDateSelect(selectInfo:any) {
     let title = prompt('Please enter a new title for your event')
@@ -32,9 +32,9 @@ export default function DemoApp() {
     }
   }
 
-  function handleEvents(events:any) {
-    setCurrentEvents(events)
-  }
+  // function handleEvents(events:any) {
+  //   setCurrentEvents(events)
+  // }
 
   return (
     <div className='demo-app'>
@@ -56,7 +56,7 @@ export default function DemoApp() {
           select={handleDateSelect}
           eventContent={renderEventContent} // custom render function
           eventClick={handleEventClick}
-          eventsSet={handleEvents} // called after events are initialized/added/changed/removed
+          // eventsSet={handleEvents} // called after events are initialized/added/changed/removed
           /* you can update a remote database when these fire:
           eventAdd={function(){}}
           eventChange={function(){}}
