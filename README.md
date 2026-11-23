@@ -100,3 +100,8 @@ Add your project screenshots to the `screenshots` directory and reference them h
 ```
 
 *Note: The project structure may vary depending on the implementation.*
+
+## License
+
+This project is licensed under the MIT License.
+See the [LICENSE](LICENSE) file for details.
